@@ -4,9 +4,9 @@ var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'К
 
 var WIZARD_SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 
-var СOAT_COLOR = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var СOATS_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 
-var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
+var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
@@ -22,18 +22,13 @@ var getRandElement = function (arr) {
   return arr[rand];
 };
 
-var createsWizard = function () {
+var creatWizard = function () {
   var wizard = {};
   wizard.name = getRandElement(WIZARD_NAMES) + ' ' + getRandElement(WIZARD_SURNAMES);
-  wizard.coatColor = getRandElement(СOAT_COLOR);
-  wizard.eyesColor = getRandElement(EYES_COLOR);
+  wizard.coatColor = getRandElement(СOATS_COLORS);
+  wizard.eyesColor = getRandElement(EYES_COLORS);
   return wizard;
 };
-
-for (var i = 0; i < 4; i++) {
-  var wzd = createsWizard();
-  wizards.push(wzd);
-}
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -44,6 +39,11 @@ var renderWizard = function (wizard) {
 
   return wizardElement;
 };
+
+for (var i = 0; i < 4; i++) {
+  var wzd = creatWizard();
+  wizards.push(wzd);
+}
 
 var fragment = document.createDocumentFragment();
 
