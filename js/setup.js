@@ -22,7 +22,7 @@ var getRandElement = function (arr) {
   return arr[rand];
 };
 
-var creatWizard = function () {
+var createWizard = function () {
   var wizard = {};
   wizard.name = getRandElement(WIZARD_NAMES) + ' ' + getRandElement(WIZARD_SURNAMES);
   wizard.coatColor = getRandElement(СOATS_COLORS);
@@ -41,7 +41,7 @@ var renderWizard = function (wizard) {
 };
 
 for (var i = 0; i < 4; i++) {
-  var wzd = creatWizard();
+  var wzd = createWizard();
   wizards.push(wzd);
 }
 
