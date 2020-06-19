@@ -7,12 +7,10 @@
   dialogHandle.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
 
-    var constCoords = {
+    var startCoords = {
       x: evt.clientX,
       y: evt.clientY
     };
-
-    var startCoords = constCoords;
 
     var dragged = false;
 

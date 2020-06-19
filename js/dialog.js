@@ -5,11 +5,22 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = userDialog.querySelector('.setup-close');
   var setupUserName = userDialog.querySelector('.setup-user-name');
+  var isUserNameInputFocused = false;
+
+  setupUserName.addEventListener('focus', function () {
+    isUserNameInputFocused = true;
+  });
+
+  setupUserName.addEventListener('blur', function () {
+    isUserNameInputFocused = false;
+  });
 
   var onPopupEscPress = function (evt) {
     if (evt.key === 'Escape') {
       evt.preventDefault();
-      closePopup();
+      if (!isUserNameInputFocused) {
+        closePopup();
+      }
     }
   };
 
@@ -20,12 +31,8 @@
 
   var closePopup = function () {
     userDialog.classList.add('hidden');
-
-    document.removeEventListener('keydown', function (evt) {
-      if (evt.key === 'Escape') {
-        userDialog.classList.add('hidden');
-      }
-    });
+    userDialog.removeAttribute('style');
+    document.removeEventListener('keydown', onPopupEscPress);
   };
 
   setupOpen.addEventListener('click', function () {
