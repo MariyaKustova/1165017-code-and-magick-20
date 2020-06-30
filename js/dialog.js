@@ -4,7 +4,7 @@
   var userDialog = window.setup.userDialog;
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = userDialog.querySelector('.setup-close');
-  var setupUserName = window.setup.setupUserName;
+  var setupUserName = window.validation.setupUserName;
   var isUserNameInputFocused = false;
 
   setupUserName.addEventListener('focus', function () {
