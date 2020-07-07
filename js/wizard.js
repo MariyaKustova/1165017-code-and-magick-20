@@ -49,5 +49,5 @@
     wizard.onEyesChange(newColor);
   });
 
-  return window.wizard = wizard;
+  window.wizard = wizard;
 })();
