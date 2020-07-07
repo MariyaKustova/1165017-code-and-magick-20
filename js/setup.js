@@ -21,7 +21,8 @@
   var namesComparator = function (left, right) {
     if (left > right) {
       return 1;
-    } else if (left < right) {
+    }
+    if (left < right) {
       return -1;
     }
     return 0;
